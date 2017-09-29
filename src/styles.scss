@@ -76,6 +76,11 @@ $calendar-shadow: rgba($calendar-color, 0.25) 0 0 1em !default;
             border-width: 4px 6px 4px 4px;
             border-color: transparent $calendar-month-button-icon-color transparent transparent;
         }
+
+        &--disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
     }
 
     &.next {
@@ -85,6 +90,11 @@ $calendar-shadow: rgba($calendar-color, 0.25) 0 0 1em !default;
             margin: 0 0 0 7px;
             border-width: 4px 4px 4px 6px;
             border-color: transparent transparent transparent $calendar-month-button-icon-color;
+        }
+
+        &--disabled {
+            opacity: 0.4;
+            pointer-events: none;
         }
     }
 }

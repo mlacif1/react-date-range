@@ -15,11 +15,13 @@ export const defaultClasses = {
   monthAndYearWrapper        : 'rdr-MonthAndYear-innerWrapper',
   prevButton                 : 'rdr-MonthAndYear-button prev',
   nextButton                 : 'rdr-MonthAndYear-button next',
+  disabledPrevButton         : 'rdr-MonthAndYear-button prev prev--disabled',
+  disabledNextButton         : 'rdr-MonthAndYear-button next next--disabled',
   month                      : 'rdr-MonthAndYear-month',
   monthAndYearDivider        : 'rdr-MonthAndYear-divider',
   year                       : 'rdr-MonthAndYear-year',
   daySunday                  : 'rdr-Sunday',
-  daySpecialDay               : 'rdr-SpecialDay',
+  daySpecialDay              : 'rdr-SpecialDay',
 };
 
 const defaultTheme = {

@@ -108,10 +108,24 @@ class Calendar extends Component {
     let month           = moment.months(shownDate.month());
     const year            = shownDate.year();
     const { styles }      = this;
-    const { onlyClasses, lang, showMonthArrow} = this.props;
+    const { onlyClasses, lang, showMonthArrow, enabledPrevMonths, enabledNextMonths} = this.props;
 
     let monthLower = month.toLowerCase()
     month = (lang && LangDic[lang] && LangDic[lang][monthLower]) ? LangDic[lang][monthLower] : month;
+
+    if (enabledNextMonths !== Infinity || enabledPrevMonths !== Infinity) {
+        const currentMonth = moment().month();
+        const currentYear = moment().year();
+        let disablePrevArrow = false;
+        let disableNextArrow = false;
+
+        if (enabledPrevMonths !== Infinity && shownDate.month() <= currentMonth - enabledPrevMonths) {
+            disablePrevArrow = true;
+        }
+        if (enabledNextMonths !== Infinity && shownDate.month() >= currentMonth + enabledPrevMonths) {
+            disableNextArrow = true;
+        }
+    }
 
     return (
       <div style={onlyClasses ? undefined : styles['MonthAndYear']} className={classes.monthAndYearWrapper}>
@@ -120,7 +134,7 @@ class Calendar extends Component {
           <button
             type="button"
             style={onlyClasses ? undefined : { ...styles['MonthButton'], float : 'left' }}
-            className={classes.prevButton}
+            className={disablePrevArrow ? classes.disabledPrevButton : classes.prevButton}
             onClick={this.changeMonth.bind(this, -1)}>
             <i style={onlyClasses ? undefined : { ...styles['MonthArrow'], ...styles['MonthArrowPrev'] }}></i>
           </button> : null
@@ -135,7 +149,7 @@ class Calendar extends Component {
           <button
             type="button"
             style={onlyClasses ? undefined : { ...styles['MonthButton'], float : 'right' }}
-            className={classes.nextButton}
+            className={disableNextArrow ? classes.disabledNextButton : classes.nextButton}
             onClick={this.changeMonth.bind(this, +1)}>
             <i style={onlyClasses ? undefined : { ...styles['MonthArrow'], ...styles['MonthArrowNext'] }}></i>
           </button> : null
@@ -267,6 +281,8 @@ Calendar.defaultProps = {
   format      : 'DD/MM/YYYY',
   theme       : {},
   showMonthArrow: true,
+  enabledNextMonths: Infinity,
+  enabledPrevMonths: Infinity,
   disableDaysBeforeToday: false,
   onlyClasses : false,
   classNames  : {},
@@ -275,6 +291,8 @@ Calendar.defaultProps = {
 
 Calendar.propTypes = {
   showMonthArrow : PropTypes.bool,
+  enabledNextMonths: PropTypes.number,
+  enabledPrevMonths: PropTypes.number,
   disableDaysBeforeToday : PropTypes.bool,
   lang           : PropTypes.string,
   sets           : PropTypes.string,
