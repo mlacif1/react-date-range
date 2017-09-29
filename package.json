@@ -1,6 +1,6 @@
 {
-  "name": "react-date-range",
-  "version": "0.9.5",
+  "name": "react-date-range-enhanced",
+  "version": "1.0.0",
   "description": "A React component for choosing dates and date ranges.",
   "main": "lib/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "datepicker",
     "rangepicker"
   ],
-  "author": "Forked from http://github.com/Adphorus/react-date-range",
+  "author": "Laszlo Mile - Forked from http://github.com/Adphorus/react-date-range",
   "license": "MIT",
   "repository": {
     "type": "git",
