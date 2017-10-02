@@ -127,8 +127,7 @@ class Calendar extends Component {
         }
     }
 
-    return (
-      <div style={onlyClasses ? undefined : styles['MonthAndYear']} className={classes.monthAndYearWrapper}>
+    return (<div style={onlyClasses ? undefined : styles['MonthAndYear']} className={classes.monthAndYearWrapper}>
         {
           showMonthArrow ?
           <button
@@ -154,8 +153,7 @@ class Calendar extends Component {
             <i style={onlyClasses ? undefined : { ...styles['MonthArrow'], ...styles['MonthArrowNext'] }}></i>
           </button> : null
         }
-      </div>
-    )
+      </div>)
   }
 
   renderWeekdays(classes) {

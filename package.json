@@ -20,7 +20,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/mlacif1/react-date-range"
+    "url": "git+ssh://git@github.com/mlacif1/react-date-range.git"
   },
   "bugs": {
     "url": "http://github.com/mlacif1/react-date-range/issues"
@@ -35,5 +35,6 @@
   },
   "devDependencies": {
     "babel": "^5.8.23"
-  }
+  },
+  "homepage": "https://github.com/mlacif1/react-date-range#readme"
 }

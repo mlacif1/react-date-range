@@ -31,8 +31,7 @@ export default class Main extends Component {
     const { rangePicker, linked, datePicker, firstDayOfWeek, predefined} = this.state;
     const format = 'dddd, D MMMM YYYY';
 
-    return (
-      <main className={styles['Main']}>
+    return (<main className={styles['Main']}>
 
         <h1 className={styles['Title']}>React-date-range</h1>
 
@@ -241,7 +240,6 @@ export default class Main extends Component {
             />
           </div>
         </Section>
-      </main>
-    )
+      </main>)
   }
 }
