@@ -95,3 +95,7 @@ class MyComponent extends Component {
 * **rangedCalendars** *(Boolean)* default: false
 * **lang:** *(String, 'cn' - Chinese, 'jp' - Japanese, 'fr' - French, 'it' - Italian, 'de' - German, 'es' - Spanish, 'ru' - Russian)* default: none
 * **specialDays:** *(Array [{date: Moment.js object}])* default: none
+* **disabledPrevButton:** *(String)* - default: rdr-MonthAndYear-button prev prev--disabled
+* **disabledNextButton:** *(String)* - default: rdr-MonthAndYear-button next next--disabled
+* **enabledPrevMonths:** *(Number)* - default: Infinity
+* **enabledNextMonths:** *(Number)* - default: Infinity
