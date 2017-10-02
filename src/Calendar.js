@@ -121,7 +121,7 @@ class Calendar extends Component {
         if (enabledPrevMonths !== Infinity && shownDate.month() <= currentMonth - enabledPrevMonths && shownDate.year() <= (currentYear - parseInt(enabledPrevMonths/12))) {
             disablePrevArrow = true;
         }
-        if (enabledNextMonths !== Infinity && shownDate.month() >= currentMonth + enabledPrevMonths && shownDate.year() >= (currentYear + parseInt(enabledPrevMonths/12))) {
+        if (enabledNextMonths !== Infinity && shownDate.month() >= currentMonth + enabledNextMonths && shownDate.year() >= (currentYear + parseInt(enabledNextMonths/12))) {
             disableNextArrow = true;
         }
     }
