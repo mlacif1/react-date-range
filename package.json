@@ -1,6 +1,6 @@
 {
   "name": "react-date-range-enhanced",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A React component for choosing dates and date ranges.",
   "main": "lib/index.js",
   "scripts": {
@@ -20,10 +20,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/mlacif1/react-date-range.git"
+    "url": "http://github.com/mlacif1/react-date-range-enhanced"
   },
   "bugs": {
-    "url": "http://github.com/mlacif1/react-date-range/issues"
+    "url": "http://github.com/mlacif1/react-date-range-enhanced/issues"
   },
   "dependencies": {
     "classnames": "^2.2.1",
@@ -35,6 +35,5 @@
   },
   "devDependencies": {
     "babel": "^5.8.23"
-  },
-  "homepage": "https://github.com/mlacif1/react-date-range#readme"
+  }
 }
