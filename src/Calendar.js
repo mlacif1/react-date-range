@@ -114,7 +114,8 @@ class Calendar extends Component {
     month = (lang && LangDic[lang] && LangDic[lang][monthLower]) ? LangDic[lang][monthLower] : month;
     let disablePrevArrow = false;
     let disableNextArrow = false;
-    if ((enabledNextMonths !== Infinity && enabledNextMonths >= 0) || (enabledPrevMonths !== Infinity && enabledPrevMonths >= 0)) {
+    if ((enabledNextMonths !== undefined && enabledNextMonths !== null && enabledNextMonths !== Infinity && enabledNextMonths >= 0)
+        || (enabledPrevMonths !== undefined && enabledPrevMonths !== null && enabledPrevMonths !== Infinity && enabledPrevMonths >= 0)) {
         const currentMonth = moment().month();
         const currentYear = moment().year();
 
