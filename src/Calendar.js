@@ -112,17 +112,16 @@ class Calendar extends Component {
 
     let monthLower = month.toLowerCase()
     month = (lang && LangDic[lang] && LangDic[lang][monthLower]) ? LangDic[lang][monthLower] : month;
-
-    if (enabledNextMonths !== Infinity || enabledPrevMonths !== Infinity) {
+    let disablePrevArrow = false;
+    let disableNextArrow = false;
+    if ((enabledNextMonths !== Infinity && enabledNextMonths >= 0) || (enabledPrevMonths !== Infinity && enabledPrevMonths >= 0)) {
         const currentMonth = moment().month();
         const currentYear = moment().year();
-        let disablePrevArrow = false;
-        let disableNextArrow = false;
 
-        if (enabledPrevMonths !== Infinity && shownDate.month() <= currentMonth - enabledPrevMonths) {
+        if (enabledPrevMonths !== Infinity && shownDate.month() <= currentMonth - enabledPrevMonths && shownDate.year() <= (currentYear - parseInt(enabledPrevMonths/12))) {
             disablePrevArrow = true;
         }
-        if (enabledNextMonths !== Infinity && shownDate.month() >= currentMonth + enabledPrevMonths) {
+        if (enabledNextMonths !== Infinity && shownDate.month() >= currentMonth + enabledPrevMonths && shownDate.year() >= (currentYear + parseInt(enabledPrevMonths/12))) {
             disableNextArrow = true;
         }
     }
